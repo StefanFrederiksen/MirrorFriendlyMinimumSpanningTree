@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace App.Core
 {
@@ -6,7 +7,18 @@ namespace App.Core
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var path = @"..\..\..\..\Instances\test01.uwg";
+
+            try
+            {
+                UwgParser.Test(path);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            Console.ReadLine();
         }
     }
 }
