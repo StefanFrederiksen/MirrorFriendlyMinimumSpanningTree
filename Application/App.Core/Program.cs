@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using App.Core.Helpers;
 
 namespace App.Core
 {
@@ -11,7 +12,8 @@ namespace App.Core
 
             try
             {
-                UwgParser.Test(path);
+                var graph = UwgParser.ParseGraphFromFile(path);
+                Console.WriteLine(graph.ToString());
             }
             catch (Exception e)
             {
